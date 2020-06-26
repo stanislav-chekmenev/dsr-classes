@@ -3,6 +3,11 @@ Python
 - allows quick iteration over ideas
 - can be put into production
 
+## Conda virtual environment
+- follow the installation instructions [here](https://docs.anaconda.com/anaconda/install/)
+- conda create --name dsr python=3.7.3
+- conda activate dsr
+
 ## Further resources
 
 [See here](https://github.com/ADGEfficiency/programming-resources/tree/master/python)
