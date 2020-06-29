@@ -2,7 +2,7 @@ A series of notebooks designed to teach Python from the bottom up.  The notes ar
 
 ## Further reading
 
-[My personal collection of Python resources](https://github.com/ADGEfficiency/programming-resources/tree/master/python)
+[Adam Green's personal collection of Python resources](https://github.com/ADGEfficiency/programming-resources/tree/master/python)
 
 [The Python Tutorial](https://docs.python.org/3/tutorial/)
 
