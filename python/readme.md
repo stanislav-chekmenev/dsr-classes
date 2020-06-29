@@ -5,7 +5,7 @@ Python
 
 ## Conda virtual environment
 - follow the installation instructions [here](https://docs.anaconda.com/anaconda/install/)
-- conda create --name dsr python=3.7.3
+- conda create --name dsr python=3.6.9
 - conda activate dsr
 
 ## Further resources
