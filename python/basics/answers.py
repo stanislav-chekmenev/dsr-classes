@@ -217,3 +217,60 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
+    
+
+# Classes
+# Ex 1
+class Actor():
+    
+    def __init__(self, name, num_films=0):
+        self.name = name
+        self.num_films = num_films
+    
+    def act(self, films):
+        
+        for fi in films:
+            if self.name in fi.actors:
+                self.num_films += 1
+                
+        return self.num_films
+    
+    
+# Ex 2
+class Dataset:
+    """Insert docstring here"""
+    
+    def __init__(self, samples):
+        self.samples = samples
+    
+    def sample_batch(self, batch_size):
+        batch = random.sample(self.samples, k=batch_size)
+        return batch
+        
+    
+
+class OrderedDataset(Dataset):
+    """Insert docstring here"""
+    
+    def __init__(self, samples):
+        super().__init__(samples)
+        
+    
+    def order_sampled_batch(self, batch_size):
+        batch = super().sample_batch(batch_size)
+        batch.sort()
+        return batch
+    
+    
+    
+class ShuffledDataset(Dataset):
+    """Insert docstring here"""
+        
+    def __init__(self, samples):
+        super().__init__(samples)
+        
+    
+    def shuffle_sampled_batch(self, batch_size):
+        batch = super().sample_batch(batch_size)
+        random.shuffle(batch)
+        return batch 
