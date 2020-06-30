@@ -148,6 +148,7 @@ for stem in stems:
     stems_dict[stem] += 1
     
 # Paths-and-importing
+# Version with os
 home = os.environ['HOME']
 path = os.path.join(home, 'practice')
 
@@ -174,6 +175,17 @@ for root, dirs, files in os.walk(path):
 for root, dirs, _ in os.walk(path):
     for d in dirs:
         os.rmdir(os.path.join(root, d))
+        
+# Version wiht Path
+home = os.environ['HOME']
+path = os.path.join(home, 'practice')
+
+p = Path(path)
+p.mkdir(exist_ok=True)
+
+for i in range(10):
+    p.joinpath(f'{i}').mkdir(exist_ok=True)
+    p.joinpath(f'{i}',f'{i * 2}.py').touch(exist_ok=True)
         
 
         
@@ -258,6 +270,7 @@ class Actor():
     
     
 # Ex 2
+# Version 1
 class Dataset:
     """Insert docstring here"""
     
@@ -295,3 +308,24 @@ class ShuffledDataset(Dataset):
         batch = super().sample_batch(batch_size)
         random.shuffle(batch)
         return batch 
+
+# Version 2
+class Dataset:
+    “”"Insert docstring here”“”
+    def __init__(self, samples):
+        self.samples = samples
+        
+    def sample_batch(self, batch_size=10):
+        return random.sample(self.samples, batch_size)
+    
+class OrderedDataset(Dataset):
+    “”"Insert docstring here”“”
+    def __init__(self, samples):
+        samples.sort()
+        super().__init__(samples)
+        
+class ShuffledDataset(Dataset):
+    “”"Insert docstring here”“”
+    def __init__(self, samples):
+        random.shuffle(samples)
+        super().__init__(samples)
