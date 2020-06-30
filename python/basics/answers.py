@@ -11,21 +11,22 @@ for _ in range(6):
 # Ex 2
 for i in range(1, 10):
     print(str(i) * i)
+   
 
 # Ex 3
 l = []
 trange = datetime(2019, 9, 25, 7, 5) + timedelta(0, 300) - datetime(2019, 9, 23, 17, 45)
-
 for i in range(0, trange.days * 24 * 3600 + trange.seconds, 300):
     l.append(datetime(2019, 9, 23, 17, 45) + timedelta(0, i))
     
 # Ex 4
 start = datetime(1989, 9, 9)
-
 while start <= datetime(1990, 10, 3):
     start += timedelta(5)
     
 print(start - datetime(1990, 10, 3))
+
+
 
 # Ex 5
 start = datetime(1988, 2, 28)
@@ -41,6 +42,7 @@ for i in range(0, trange.days, 25):
     mon = tmp.month
         
 print(tmp - datetime(1989, 9, 9))
+
 
 
 # pep8
@@ -111,6 +113,14 @@ def cnn_model2(name, rate, x_shaped):
     return my_cnn
 
 
+
+
+
+
+
+
+
+
 # Strings
 # Ex 1
 def check(char, word):
@@ -165,12 +175,23 @@ for root, dirs, _ in os.walk(path):
     for d in dirs:
         os.rmdir(os.path.join(root, d))
         
+
+        
+        
+        
+        
         
 # Iterables and files
 # Ex 1
 for col in colors:
     for size in sizes:
         print(col, size)
+        
+        
+        
+        
+        
+    
         
 
 # Dicts-and-sets
@@ -180,7 +201,7 @@ for k, v in zip(fitz.values(), fitz.keys()):
     
 # Ex 2
 with open('./quotes.json', 'w') as fi:
-    json.dump(data, fi)
+    json.dump(quotes, fi)
     
 # Ex 3
 authors = []
